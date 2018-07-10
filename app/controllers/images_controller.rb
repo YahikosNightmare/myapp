@@ -22,7 +22,7 @@ class ImagesController < ApplicationController
 
 
 	def create 
-		render plain: params[:image].inspect
+		#render plain: params[:image].inspect
         @image = Image.new images_params
         @image.save
 
