@@ -1,16 +1,22 @@
 class ImagesController < ApplicationController
 
+	before_action :set_image, only: [:show, :edit, :update, :destroy]
 =begin
 	Damos permisos para la captura de los parametros de nuestro formulario
 =end
 	
+	## si se declara privado todo desde aquí, hasta que no se haga una declaración diferente de visibilidad (public, protected) todos los métodos serán accesibles solo dentro del controlador
 	private
 	
     def images_params
         params.require(:image).permit(:description)
     end 
 
-    
+    def set_image
+		@image = Image.find params[:id]
+	end
+
+	##SE CAMBIA LA VISIBILIDAD DE AQUÍ EN ADELANTE A PUBLICA
     public
 
 =begin
@@ -33,7 +39,7 @@ class ImagesController < ApplicationController
 	Creamos nuestro metodo show para visualizar nuestro objeto imagen
 =end
     def show
-    	@image = Image.find params[:id]
+    	
     end
 
 =begin
@@ -44,7 +50,19 @@ class ImagesController < ApplicationController
    	end
 
 	def edit
-		@image = Image.find params[:id]
+		
+	end
+
+	def update
+		
+		@image.update images_params
+		redirect_to @image
+	end
+
+	def destroy
+		
+		@image.destroy
+		redirect_to images_path
 	end
 
 end
