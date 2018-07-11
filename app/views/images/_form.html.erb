@@ -1,5 +1,5 @@
 <div class="form-group">
-	<%= form_for @image do |f| %>
+	<%= form_for @image, :html => {:multipart => true} do |f| %>
 	<%= f.label :description %> <br>
 	<%= f.text_field :description, class: 'form-control' %>
 	<br>
