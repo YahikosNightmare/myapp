@@ -9,8 +9,8 @@ class ImagesController < ApplicationController
 	private
 	
     def images_params
-        params.require(:image).permit(:description)
-    end 
+		params.require(:image).permit :description, :picture
+	end
 
     def set_image
 		@image = Image.find params[:id]
