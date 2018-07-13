@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'home/index'
+
   get 'welcome/index'
 
-  root :to => "welcome#index"
+  #root :to => "welcome#index"
+  root to: "home#index"
 
   resources :images
 

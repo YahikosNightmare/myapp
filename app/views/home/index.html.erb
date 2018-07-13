@@ -1,0 +1,6 @@
+<h1>ImageGram</h1>
+	<% if user_signed_in? %>
+		<h3>Bienvenido! <%= current_user.name %> </h3>
+	<% else %>
+		<p> por favor inicia sesión para ver imagenes </p>
+	<% end %>
