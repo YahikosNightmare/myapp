@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap'
 gem 'rails-ujs'
 
+# Gema de manejo de sesiones
+gem 'devise', git: 'git://github.com/plataformatec/devise.git'
+
 #Gema de cargue de imagenes
 gem 'carrierwave'
 
